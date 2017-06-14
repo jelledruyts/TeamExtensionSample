@@ -1,0 +1,91 @@
+{
+  "id": "95b3cf00-34ba-11e7-9df0-d335b27936c8",
+  "name": "Demo",
+  "friendlyName": "Demo Build/Release Task",
+  "description": "This demo task can be used in Build and Release pipelines",
+  "author": "Jelle Druyts",
+  "helpMarkDown": "This demo task doesn't do anything useful but shows how you can implement tasks yourself",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "runsOn": [
+    "Agent",
+    "DeploymentGroup"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "2"
+  },
+  "instanceNameFormat": "Demo $(message)",
+  "groups": [
+    {
+      "name": "advanced",
+      "displayName": "Advanced",
+      "isExpanded": false
+    }
+  ],
+  "inputs": [
+    {
+      "name": "messageIsMultiLine",
+      "type": "boolean",
+      "label": "Multiline",
+      "defaultValue": "false",
+      "helpMarkDown": "Determines if the message is multi-line",
+      "required": true
+    },
+    {
+      "name": "messageSingleLine",
+      "type": "string",
+      "label": "Message",
+      "defaultValue": "Hello, World!",
+      "required": true,
+      "helpMarkDown": "The message to echo out",
+      "visibleRule": "messageIsMultiLine = false"
+    },
+    {
+      "name": "messageMultiLine",
+      "type": "multiLine",
+      "label": "Detailed Message",
+      "defaultValue": "Line 1\nLine 2\nLine 3\n...",
+      "required": true,
+      "helpMarkDown": "The message to echo out",
+      "visibleRule": "messageIsMultiLine = true",
+      "properties": {
+        "resizable": "true",
+        "rows": "20"
+      }
+    },
+    {
+      "name": "format",
+      "type": "pickList",
+      "label": "Format",
+      "defaultValue": "default",
+      "required": true,
+      "helpMarkDown": "Determines the formatting of the message",
+      "options": {
+        "default": "Default",
+        "upperCase": "Upper Case",
+        "lowerCase": "Lower Case"
+      },
+      "groupName": "advanced"
+    },
+    {
+      "name": "workingFolder",
+      "type": "filePath",
+      "label": "Working Folder",
+      "defaultValue": "",
+      "required": false,
+      "groupName": "advanced"
+    }
+  ],
+  "execution": {
+    "Node": {
+      "target": "task.js",
+      "argumentFormat": ""
+    }
+  }
+}

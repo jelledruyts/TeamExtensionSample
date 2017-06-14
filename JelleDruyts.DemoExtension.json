@@ -1,0 +1,71 @@
+{
+    "manifestVersion": 1,
+    "id": "DemoExtension",
+    "name": "Demo Extension",
+    "version": "0.0.8",
+    "publisher": "JelleDruyts",
+    "public": false,
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "description": "Demo extension for Visual Studio Team Services and Team Foundation Server",
+    "categories": [
+        "Build and release"
+    ],
+    "tags": [
+        "demo",
+        "build",
+        "release"
+    ],
+    "screenshots": [
+        {
+            "path": "Screenshots/Demo.png"
+        },
+        {
+            "path": "Screenshots/InlineScript.png"
+        }
+    ],
+    "content": {
+        "details": {
+            "path": "JelleDruyts.DemoExtension.md"
+        },
+        "license": {
+            "path": "LICENSE.txt"
+        }
+    },
+    "links": {},
+    "icons": {
+        "default": "JelleDruyts.DemoExtension.png"
+    },
+    "files": [
+        {
+            "path": "Tasks/Demo"
+        },
+        {
+            "path": "Tasks/InlineScript"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "Demo",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "Tasks/Demo"
+            }
+        },
+        {
+            "id": "InlineScript",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "Tasks/InlineScript"
+            }
+        }    ]
+}

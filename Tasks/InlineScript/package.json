@@ -1,0 +1,19 @@
+{
+  "name": "inlinescript",
+  "version": "1.0.0",
+  "description": "Inline Script Task",
+  "main": "task.js",
+  "author": "Jelle Druyts",
+  "dependencies": {
+    "vsts-task-lib": "^2.0.5"
+  },
+  "devDependencies": {
+    "@types/minimatch": "^2.0.29",
+    "@types/mockery": "^1.4.29",
+    "@types/node": "^7.0.18",
+    "@types/q": "^1.0.0",
+    "@types/semver": "^5.3.31",
+    "@types/shelljs": "^0.7.1",
+    "@types/uuid": "^2.0.29"
+  }
+}
